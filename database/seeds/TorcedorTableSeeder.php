@@ -12,7 +12,7 @@ class TorcedorTableSeeder extends Seeder
         public function run()
         {
           // Opção 1
-      DB::table('torcedor')->insert([
+         DB::table('torcedor')->insert([
          'nome' => 'Monique Gomes Henriques',
          'documento' => '000.000.000-81',
          'cep' => '72130-550',
