@@ -47,7 +47,7 @@
 
                         <div class="form-group">
                             <label for="telefone">Telefone</label>
-                            <input type="text" required class="form-control{{$errors->has('telefone') ? ' is-invalid':''}}" value="{{ old('telefone') }}" id="telefone" name="telefone">
+                            <input type="text" class="form-control{{$errors->has('telefone') ? ' is-invalid':''}}" value="{{ old('telefone') }}" id="telefone" name="telefone">
                             <div class="invalid-feedback">{{ $errors->first('telefone') }}</div>
                         </div>
                         <div class="form-group">

@@ -15,6 +15,13 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::group(['middelware'=>'auth'], function(){
+  Route::get('/import_xml', 'ImportExcelController@index');
+  Route::post('/import_xml/import', 'ImportExcelController@import');
+
+});
+
+
 Route::group(['middleware'=>'auth', 'prefix'=>'torcedor'], function() {
 
           Route::get('/', 'TorcedorController@index');

@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    @yield('stylecss')
 </head>
 <body>
     <div id="app">
@@ -38,8 +40,13 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{ url('torcedor') }}">Lista de Torcedores <span class="sr-only">(current)</span></a>
                           </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/import_xml') }}">Atualizar Planilha <span class="sr-only">(current)</span></a>
+                            </li>
+
                           @endguest
                       </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
