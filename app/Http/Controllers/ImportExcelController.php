@@ -13,20 +13,23 @@
             return view('torcedor.import_xml');
         }
 
+
         public function import(Request $request) {
+          $this->validate($request,[
+            'select_file' => 'required|mimes:xls,xlsx,xml'
+          ]);
+        	$file = $request->file('select_file');
+        	$file_path = $file->getPathName();
 
-               $file = $request->file('select_file');
-               $file_path = $file->getPathName();
+        	$xml = simplexml_load_file($file_path);
+        	$xmlToArray = json_decode(json_encode((array)$xml), true);
 
-               //$xml=simplexml_load_file($file_path);
-               $xml=simplexml_load_string($file_path, null, LIBXML_NOCDATA);
-              //StreamParser::xml($file_path)->each(function(Collection $torcedor){
-              //$torcedores = Torcedor::create($torcedor->all());
-                  print_r($xml);
-                  //echo"\r\n\r\n";
-        //};
-        //   return redirect('torcedor');
+        	foreach ($xmlToArray["torcedor"] as $torcedor) {
+                     $torcedor["@attributes"]["ativo"] = ($torcedor["@attributes"]["ativo"] == "" ? 0 : $torcedor["@attributes"]["ativo"]);
+        		$create = Torcedor::create($torcedor["@attributes"]);
+        	}
+
+        	return redirect('torcedor');
         }
 
-
-    }
+      }

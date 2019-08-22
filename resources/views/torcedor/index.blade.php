@@ -12,10 +12,10 @@
     <div class="card">
         <div class="card-header">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Pesquisar Torcedor" ></input>
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary " type="button">Buscar</button>
-            </div>
+              <input type="text" class="form-control" placeholder="Pesquisar Torcedor" ></input>
+              <form action="{{ url('torcedor/busca') }}" method="post">
+              <span class="btn btn-outline-secondary" type="submit">Buscar</button>
+          </span>
             <a href="{{ url('torcedor/add') }}" class="btn btn-outline-secondary float-right">Novo Torcedor</a>
           </div>
           <div class="col-sm-12" style="padding-bottom: 10px">
@@ -26,7 +26,7 @@
               </a>
             </div>
             @endforeach
-          </div>
+            </div>
         </div>
         <div class="card-body p-0">
             <div class="table-responsive border-0">
@@ -67,10 +67,7 @@
                 </table>
             </div>
         </div>
+        @endsection
     </div>
-</div>
-
-@endsection
-
-
-@endsection
+  </div>
+    @endsection

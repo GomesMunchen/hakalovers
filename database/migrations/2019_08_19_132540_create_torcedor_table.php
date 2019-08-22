@@ -19,8 +19,8 @@ class CreateTorcedorTable extends Migration
               $table->string('documento', 14);
               $table->string('cep', 10);
               $table->string('endereco', 250);
-              $table->string('bairro', 20);
-              $table->string('cidade',20);
+              $table->string('bairro', 100);
+              $table->string('cidade',100);
               $table->char('uf', 2);
               $table->string('telefone', 15);
               $table->string('email', 200);
