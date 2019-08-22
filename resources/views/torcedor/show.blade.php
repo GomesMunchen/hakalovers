@@ -8,7 +8,6 @@
 
 </style>
 @endsection
-
 @section('javascript')
 <script type="text/javascript">
 function validate_delete() {
@@ -28,8 +27,7 @@ function validate_delete() {
                         @method('DELETE')
 
                         {{ csrf_field() }}
-
-                        <div class="row">
+                          <div class="row">
                                 <div class="form-group">
                                     <label for="nome">Nome Completo</label>
                                     <p class="form-control">{{ $data->nome }}</p>

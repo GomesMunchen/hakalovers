@@ -31,7 +31,5 @@ Route::group(['middleware'=>'auth', 'prefix'=>'torcedor'], function() {
           Route::get('/edit/{id}', 'TorcedorController@edit');
           Route::put('{id}','TorcedorController@update');
           Route::delete('{id}', 'TorcedorController@destroy');
-          Route::post('/busca', 'TorcedorController@busca');
-          Route::get('/letra', 'TorcedorController@buscaLetra');
-
+          
 });
