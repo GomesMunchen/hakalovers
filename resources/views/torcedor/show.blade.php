@@ -22,11 +22,11 @@ function validate_delete() {
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Perfil do Torcedor</div>
-                <form action="{{ url('torcedor/'.$data->id) }}" method="post" onsubmit="return validate_delete()">
+                <form action="{{ url('torcedor/'.$data->id) }}" method="post" onsubmit="validate_delete()">
                     <div class="card-body">
                         @method('DELETE')
 
-                        {{ csrf_field() }}
+                        @csrf
                           <div class="row">
                                 <div class="form-group">
                                     <label for="nome">Nome Completo</label>
@@ -71,11 +71,11 @@ function validate_delete() {
 
                             </div>
                         </div><!-- /.row -->
-                    </div>
-                    <div class="card-footer text-right">
-                        <a href="#" onclick="history.back()" class="btn btn-secondary">Voltar</a>
-                        <button type="submit" class="btn btn-danger">Excluir</button>
-                        <a href="{{ url('torcedor/edit/'.$data->id) }}" class="btn btn-primary">Editar</a>
+                        <div class="card-footer text-right">
+                          <a href="#" onclick="history.back()" class="btn btn-secondary">Voltar</a>
+                          <button type="submit" class="btn btn-danger">Excluir</button>
+                          <a href="{{ url('torcedor/edit/'.$data->id) }}" class="btn btn-primary">Editar</a>
+                        </div>
                     </div>
                 </form>
             </div>

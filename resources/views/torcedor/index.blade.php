@@ -9,7 +9,7 @@
 @section('javascript')
 <script>
 $(document).ready(function() {
-    $('#torcedores').DataTable();
+    $('#torcedor').DataTable();
 } );
 </script>
 @endsection
@@ -25,7 +25,7 @@ $(document).ready(function() {
         </div>
         <div class="card-body p-0">
             <div class="table-responsive border-0">
-                <table class="table table-hover" style="margin-bottom: inherit">
+                <table class="table table-hover" id="torcedor" style="margin-bottom: inherit">
                                  <thead>
                                    <tr>
                                        <th scope="col">#</th>
